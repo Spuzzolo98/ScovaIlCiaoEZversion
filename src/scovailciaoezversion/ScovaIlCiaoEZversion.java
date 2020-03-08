@@ -5,7 +5,12 @@ import java.util.Random;
 
 public class ScovaIlCiaoEZversion 
 {
-
+    /**rigonne
+     * 
+     * crea la matrice
+     * 
+     * @return 
+     */
     static int rigonne()
     {
         int righecolonne=0,controllo=0;
@@ -24,6 +29,13 @@ public class ScovaIlCiaoEZversion
     }
     
     
+    
+    /**tentativi
+     * 
+     * imposta quanti tentativi l'utente ha a disposizione
+     * 
+     * @return 
+     */
     static int tentativi()
     {
         Scanner scannervar = new Scanner(System.in);
@@ -36,6 +48,16 @@ public class ScovaIlCiaoEZversion
         return tentativi;
     }
     
+    
+    
+    /**riempimatrice
+     * 
+     * colloca il ciao nella matrice e ne salva le coordinate
+     * 
+     * @param matrice
+     * @param righecolonne
+     * @return 
+     */
     static int riempimatrice(int matrice[][], int righecolonne)
     {
         Random randomvar = new Random();
@@ -48,6 +70,17 @@ public class ScovaIlCiaoEZversion
         return a;
     }
     
+    
+    
+    /**giocoveroeproprio
+     * 
+     * beh, il gioco..
+     * 
+     * @param matrice
+     * @param coordciao
+     * @param tentativi
+     * @return 
+     */
     static int giocoveroeproprio(int matrice[][], int coordciao, int tentativi)
     {
         Scanner scannervar = new Scanner(System.in);
@@ -82,6 +115,9 @@ public class ScovaIlCiaoEZversion
         return esito;
     }
     
+    
+    
+    
     static void esito(int esito, int matrice[][], int righecolonne)
     {
         if(esito==1)
@@ -102,18 +138,24 @@ public class ScovaIlCiaoEZversion
         }
     }
    
+    
+    
+    
     public static void main(String[] args) 
     {
      Scanner scannervar = new Scanner(System.in);
      Random randomvar = new Random();
+     
+     
      int righecolonne=0, coordciao=0, tentativi=0, esito=0;
+     
      righecolonne = rigonne();
      tentativi = tentativi();
      int matrice[][] = new int[righecolonne][righecolonne];
+     
+     
      coordciao = riempimatrice(matrice,righecolonne);
      esito = giocoveroeproprio(matrice,coordciao,tentativi);
-     esito(esito, matrice,righecolonne);
-     
+     esito(esito, matrice,righecolonne); 
     }
-    
 }
